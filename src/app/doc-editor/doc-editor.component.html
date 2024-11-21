@@ -1,0 +1,7 @@
+<div class="control-section">
+    <app-top-toolbar (backClick)="backClickHandler($event)"></app-top-toolbar>
+    <ejs-documenteditorcontainer #documenteditor id="doc-editor" height="calc(100vh - 70px)" (created)="created()"
+        style="display:block;"
+        serviceUrl="https://services.syncfusion.com/angular/production/api/documenteditor/"
+        [enableToolbar]=true> </ejs-documenteditorcontainer>
+</div>

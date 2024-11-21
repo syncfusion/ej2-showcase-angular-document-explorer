@@ -1,0 +1,7 @@
+
+<div class="control-section">
+    <app-top-toolbar (backClick)="backClickHandler($event)"></app-top-toolbar>
+    <ejs-imageeditor #ImageEdit (created)="created()" id="image" height="calc(100vh - 70px)" (beforeSave)="beforeSave($event)"></ejs-imageeditor>   
+</div>
+
+

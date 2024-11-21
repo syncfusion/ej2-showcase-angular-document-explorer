@@ -1,0 +1,5 @@
+<div class="control-section">
+    <app-top-toolbar (backClick)="backClickHandler($event)"></app-top-toolbar>
+    <ejs-pdfviewer #PdfViewer id="pdfviewer" class="pdf-container" height="calc(100vh - 70px)" (created)="created()" [resourceUrl]="resourceUrl" (documentLoad)="documentLoad($event)"
+        style="display:block"></ejs-pdfviewer>
+</div>

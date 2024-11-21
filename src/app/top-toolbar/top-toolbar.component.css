@@ -1,0 +1,15 @@
+.e-top-title {
+    font-size: 14px;
+    color: #212529;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 21px;
+}
+
+.e-FM-back::before {
+    content: '\e70d';
+}
+
+.e-FM-close::before {
+    content: '\e745';
+}

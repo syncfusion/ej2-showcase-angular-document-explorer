@@ -1,0 +1,14 @@
+<ejs-toolbar height="50px" cssClass="e-zipToolbar">
+    <e-items>
+        <e-item title="Back" align="Left" prefixIcon="e-icons e-chevron-left" (click)="onBackClick()">           
+        </e-item>
+        <e-item style="color: black;" align="Left">
+            <ng-template #template>                           
+                {{rootFileName}}
+            </ng-template>        
+        </e-item>
+        <e-item title="Close" align="Right" prefixIcon="e-icons e-close" (click)="onBackClick()" >           
+        </e-item>
+    </e-items>
+</ejs-toolbar>
+
