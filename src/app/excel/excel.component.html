@@ -1,0 +1,4 @@
+<div class="control-section">
+    <app-top-toolbar (backClick)="backClickHandler($event)"></app-top-toolbar>
+    <ejs-spreadsheet #default [openUrl]="openUrl" [saveUrl]="saveUrl" (created)="created()" height="calc(100vh - 70px)"> </ejs-spreadsheet>
+</div>

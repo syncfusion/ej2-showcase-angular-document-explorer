@@ -1,0 +1,118 @@
+<div class="control-section" style="height: 100%;">
+    <div class="e-full-layout" style="height: 100%;">
+        <!-- LayoutHeader -->
+        <div id="LayoutHeader" class="e-Header">
+            <ejs-toolbar class="e-HeaderToolbar" id="headerTool">
+                <e-items>
+                    <!-- <e-item prefixIcon="e-icons e-print" tooltiptext="Menu" align="Left"></e-item> -->
+                    <e-item cssClass="e-hamburger" tooltipText="Menu" align="Left" (click)="hamburgerClick($event)">
+                        <ng-template #template>
+                            <span class="e-icons e-hamburger-icon"></span>
+                        </ng-template>
+                    </e-item>
+                    <e-item cssClass="e-header-icon" tooltipText="Menu" align="Left">
+                        <ng-template #template>
+                            <span class="e-folder-logo e-header-icon">
+                                <img width="30px"
+                                    src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMzIgMzIiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZWJiODI0O30uY2xzLTIsLmNscy0ze2ZpbGw6I2ZmZjt9LmNscy0ye29wYWNpdHk6MC42NTt9LmNscy0ze29wYWNpdHk6MC40O30uY2xzLTR7ZmlsbDp1cmwoI2xpbmVhci1ncmFkaWVudCk7fTwvc3R5bGU+PGxpbmVhckdyYWRpZW50IGlkPSJsaW5lYXItZ3JhZGllbnQiIHgxPSIxNiIgeTE9IjM0LjgyIiB4Mj0iMTYiIHkyPSIxNS40NyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2FkZDdmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzZhYmNmZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjx0aXRsZT5Mb2dvPC90aXRsZT48cmVjdCBjbGFzcz0iY2xzLTEiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgcng9IjYuMDgiLz48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik0yLjg4LDYuNzJoMjYuNEEuMzIuMzIsMCwwLDEsMjkuNiw3djEwLjRoLTI3VjdBLjMyLjMyLDAsMCwxLDIuODgsNi43MloiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik00LjMyLDQuNDhIMjhhLjMyLjMyLDAsMCwxLC4zMi4zMlY2LjcySDRWNC44QS4zMi4zMiwwLDAsMSw0LjMyLDQuNDhaIi8+PHBhdGggY2xhc3M9ImNscy00IiBkPSJNMS42LDkuOEg5YTEuNjEsMS42MSwwLDAsMSwxLjEuNDRsNCwzLjgxYTEuNTksMS41OSwwLDAsMCwxLjA3LjQ0bDE1LjI4LjI4QTEuNjEsMS42MSwwLDAsMSwzMiwxNi4zN3Y5LjU1QTYuMDgsNi4wOCwwLDAsMSwyNS45MiwzMkg2LjA4QTYuMDgsNi4wOCwwLDAsMSwwLDI1LjkyVjExLjRBMS42LDEuNiwwLDAsMSwxLjYsOS44WiIvPjwvc3ZnPg=="
+                                    alt="header-img" />
+                            </span>
+                        </ng-template>
+                    </e-item>
+                    <e-item class="doc-header" text="Document Explorer" align="Left"></e-item>
+                    <e-item align="Right" id="User" (click)="toolbarClick($event)"
+                        [ngClass]="popupVisibility === 'e-hide-popup' ? 'e-user-icon' : 'e-user-icon select-highlight'">
+                        <ng-template #template>
+                            <span id="User-Img" class='e-user-img e-avatar e-avatar-circle'> </span>
+                        </ng-template>
+                    </e-item>
+                    <e-item align="Right" id="GitHub" (click)="toolbarClick($event)"
+                        tooltipText="https://github.com/syncfusion/blazor-showcase-document-explorer">
+                        <ng-template #template>
+                            <span class='sf-icon-Github'> </span>
+                        </ng-template>
+                    </e-item>
+                </e-items>
+            </ejs-toolbar>
+        </div>
+        <!-- ContentSection -->
+        <div id="LayoutContent" class="e-mainLayout-content">
+            <ejs-sidebar animate="false" type="Over" class="e-sidebar-content" [isOpen]="sidebarToggle"
+                [target]="'.e-mainLayout-content'" (open)="openClick($event)" (close)="closeClick($event)"
+                [mediaQuery]="'(min-width: 600px)'" type="over" EnableGestures="false">
+                <div class="e-card e-side-card">
+                    <div class="e-card-header">
+                        <div id="User-Img" class="e-user-img e-avatar e-avatar-circle"> </div>
+                        <div class="e-card-header-caption e-user-name">
+                            <div class="e-card-header-title"> Angellina</div>
+                            <div class="e-card-sub-title"><a href="">Change Picture</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- new folder button for resolution > 600px -->
+                <div id="LeftButtonContainer" class="e-left-button-contain">
+                    <button ejs-button cssClass="e-name e-icons e-plus" (click)="newClick()" IsPrimary="true">
+                        <span style="font-family: Arial, Helvetica, sans-serif;">New Folder</span>
+                    </button>
+                </div>
+                <!-- sidebar options -->
+                <div id="LeftTreeContainer" class="e-left-tree-contain">
+                    <ejs-treeview id='treeelement' [fields]='field' [selectedNodes]='selectedNodes'
+                        (nodeSelected)='treeSelected($event)'></ejs-treeview>
+                        <div class="e-storage-container" title="Storage status">
+                        <div class="e-storage-header">
+                            <div class="e-storage-icon sf-icon-Storage" style="display: inline-block;"></div>
+                            <div class="e-storage-title" style="display: inline-block; margin-left: 24px;">Storage
+                            </div>
+                        </div>
+                        <div class="e-storage-content">
+                            <div class="e-storage-progress progress">
+                                <div class="progress-bar">
+                                </div>
+                            </div>
+                            <div class="e-storage-value">70% storage used</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="e-card e-side-card e-side-bottom-card">
+                    <div class="e-card-content"><a class="e-empty-link" href="">My Profile</a></div>
+                    <div class="e-card-content"><a class="e-empty-link" href="">Settings</a></div>
+                    <div class="e-card-content"><a class="e-empty-link" href="">Sign Out</a></div>
+                </div>
+            </ejs-sidebar>
+            <div id="RightLayout" class="e-right-layout" style="height: 100%;">
+                <ejs-filemanager #FileManager id='file-manager' class="file-container" height="100%"
+                    [ajaxSettings]='ajaxSettings' [contextMenuSettings]='contextMenuSettings'
+                    [toolbarSettings]='toolbarSettings' enablePersistence=true (fileOpen)="onFileOpen($event)"
+                    (beforeImageLoad)="beforeImageLoad($event)" (beforeSend)="beforeSend($event)" (beforeDownload)="beforeDownload($event)">
+                </ejs-filemanager>
+                <div id="file-overlay" class="e-file-overlay {{fileOverlayDisplay}}"></div>
+            </div>
+        </div>
+    </div>
+    <!-- popup containing user options like profile, sign out/in -->
+    <div id="user-Popup" class="e-notch e-icons e-user-Popup {{ popupVisibility }} ">
+        <div class="e-card {{ popupVisibility }}">
+            <div class="e-card-header">
+                <div id="User-Img" class="e-user-img e-avatar e-avatar-circle"> </div>
+                <div class="e-card-header-caption e-user-name">
+                    <div class="e-card-header-title"> Angellina</div>
+                    <div class="e-card-sub-title"><a href="">Change Picture</a></div>
+                </div>
+            </div>
+            <div class="e-card-content">
+                <div class="e-storage-progress progress">
+                    <div class="progress-bar">
+                    </div>
+                </div>
+                <div class="e-storage-value">70% storage used</div>
+            </div>
+            <div class="e-card-content">My Profile</div>
+            <div class="e-card-content">Settings</div>
+            <div class="e-card-content">Sign Out</div>
+        </div>
+    </div>
+    <ejs-dialog id='dialog' #ejDialog header={{unSupportedFileName}} [visible]='isUnSupported' [isModal]='true'
+        content='This type of file cannot be previewed.' width='350px' [buttons]='buttons'>
+    </ejs-dialog>
+</div>
